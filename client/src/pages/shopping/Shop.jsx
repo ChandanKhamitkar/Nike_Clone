@@ -64,7 +64,7 @@ function Shop() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/addToBag", addBagItem);
+            const response = await axios.post("https://nike-clone-backend.vercel.app/api/user/addToBag", addBagItem);
     
             if (response.status === 201) {
                 console.log("Item added to bag.");
@@ -83,7 +83,7 @@ function Shop() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/addToFavourite", addBagItem);
+            const response = await axios.post("https://nike-clone-backend.vercel.app/api/user/addToFavourite", addBagItem);
     
             if (response.status === 201) {
                 console.log("Item added to favourites.");

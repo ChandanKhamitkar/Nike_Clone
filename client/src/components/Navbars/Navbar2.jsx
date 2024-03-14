@@ -37,7 +37,7 @@ function Navbar2() {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/getBagItemsSize",
+          "https://nike-clone-backend.vercel.app/api/user/getBagItemsSize",
           { userId }
         );
         setBagSize(response.data.bagSize);

@@ -75,7 +75,7 @@ function SignUp() {
       else{
         console.log(`Entered correct otp is = ${enteredOTP} and actual OTP is --- ${actualOTP}`);
 
-        await axios.post(`http://localhost:3010/api/user/signUp`, {
+        await axios.post(`https://nike-clone-backend.vercel.app/api/user/signUp`, {
           email : email,
           firstname: formData.firstname,
           lastname: formData.lastname,

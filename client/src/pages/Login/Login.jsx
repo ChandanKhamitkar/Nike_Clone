@@ -34,7 +34,7 @@ function Login(){
             pending: "Matching Password",
           });
 
-          await axios.post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/loginUser", {
+          await axios.post("https://nike-clone-backend.vercel.app/api/user/loginUser", {
             email : email,
             password : password
           })

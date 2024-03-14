@@ -18,7 +18,7 @@ function Favourite() {
         const decodedToken = jwtDecode(token);
         const userId = decodedToken.userId;
         const response = await axios.post(
-          "https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/favourite",
+          "https://nike-clone-backend.vercel.app/api/user/favourite",
           { userId }
         );
         setData(response.data.favourite);
