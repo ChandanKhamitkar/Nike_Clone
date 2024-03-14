@@ -23,7 +23,7 @@ function Bag() {
 
     const fetchData = async () =>{
       try {
-        const response = await axios.post(`http://localhost:3010/api/user/checkout`, {userId});
+        const response = await axios.post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/checkout", {userId});
         setData(response.data.bag);
         console.log("Successfully fetched checkout data.");
       } catch (error) {
@@ -45,7 +45,7 @@ function Bag() {
 
     const handleCheckOut = async () => {
       try {
-        await axios.post('http://localhost:3010/api/user/order', {userId});
+        await axios.post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/order", {userId});
         console.log("Order placed Successfully");
         navigate("/orderPlaced");
       } catch (error) {

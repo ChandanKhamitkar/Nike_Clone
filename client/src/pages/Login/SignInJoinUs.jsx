@@ -38,7 +38,7 @@ function SignInJoinUs() {
       });
 
       await axios
-        .post(`http://localhost:3010/api/user/checkUser`, {
+        .post("https://vercel.com/chandans-projects-ead61204/nike-clone-backend/GnP81VJ38KfFsb4TWCpCK5J9JzNr/api/user/checkUser", {
           email: email,
           country: selectedcountry,
         })
