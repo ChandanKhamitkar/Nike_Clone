@@ -24,7 +24,10 @@ const port = 3010;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: 'https://nike-clone-frontend-two.vercel.app',
+    optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+}));
 
  
 app.use("/api/user", joinUsRoutes);
