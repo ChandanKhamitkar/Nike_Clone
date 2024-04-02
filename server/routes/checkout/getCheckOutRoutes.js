@@ -2,7 +2,7 @@ import express from "express";
 import Users from "../../models/userModel.js";
 const router = express.Router();
 
-router.post("/checkout", async(req, res) => {
+router.get("/checkout", async(req, res) => {
     const userId = req.body.userId;
 
     try {

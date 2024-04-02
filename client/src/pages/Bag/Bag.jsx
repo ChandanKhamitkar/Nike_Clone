@@ -23,7 +23,13 @@ function Bag() {
 
     const fetchData = async () =>{
       try {
-        const response = await axios.post("https://nike-clone-backend.vercel.app/api/user/checkout", {userId});
+        const token = Cookies.get('auth_token');
+        const response = await axios.get("https://nike-clone-backend.vercel.app/api/user/checkout", {
+          headers : {
+            "content-type" : "application/json",
+            Authorization : `Bearer ${token}`,
+          },
+        });
         setData(response.data.bag);
         console.log("Successfully fetched checkout data.");
       } catch (error) {
@@ -32,7 +38,7 @@ function Bag() {
     }
 
     fetchData();
-}, [userId]);
+}, []);
 
     const [subTotal, setSubtotal] = useState(0);
     useEffect(() => {
