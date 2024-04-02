@@ -3,7 +3,7 @@ import Users from "../../models/userModel.js";
 const router = express.Router();
 
 router.get("/checkout", async(req, res) => {
-    const userId = req.body.userId;
+    const userId = req.user;
 
     try {
         const user = await Users.findById(userId);
