@@ -32,7 +32,6 @@ function Navbar2() {
 
   
   useEffect(() => {
-    console.log('Effect running...');
     const token = Cookies.get("auth_token");
     const decodedToken = jwtDecode(token);
     const userId = decodedToken.userId;
@@ -43,10 +42,8 @@ function Navbar2() {
           { userId }
         );
         setBagSize(response.data.bagSize);
-        console.log("Successfully fetched bag items size.");
       } catch (error) {
         console.error("Error:", error);
-        console.log("Error occured while fetching bag items size.");
       } 
     };
 

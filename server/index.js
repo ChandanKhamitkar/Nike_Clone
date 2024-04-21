@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://nike-clone-mern-chandank.vercel.app',
+    origin: `${process.env.REACT_APP_BASE_URL}`,
     optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 }));
 // app.use(cors());

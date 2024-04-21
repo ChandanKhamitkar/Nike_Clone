@@ -1,7 +1,6 @@
 
 
 function ItemCard(props){
-    console.log("user size : ", props.userSize);
     return(
         <div className="space-y-6 mt-6">
             <div className="min-w-[600px] flex justify-between items-center md:min-w-[300px]">

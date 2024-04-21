@@ -20,7 +20,6 @@ function Navbar1(){
     }, [location.state]);
 
     const token = Cookies.get('auth_token');
-    console.log("Token type retrived from cookie : ", typeof(token));
     const decodedToken = jwtDecode(token);
 
     const handleProfile =  (e) => {
