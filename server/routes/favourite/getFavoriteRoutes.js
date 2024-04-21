@@ -2,8 +2,8 @@ import express from "express";
 import Users from "../../models/userModel.js";
 const router = express.Router();
 
-router.post("/favourite", async(req, res) => {
-    const userId = req.body.userId;
+router.get("/favourite", async(req, res) => {
+    const userId = req.user;
 
     try {
         const user = await Users.findById(userId);

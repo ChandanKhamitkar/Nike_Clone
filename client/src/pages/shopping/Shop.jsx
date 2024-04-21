@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { jwtDecode } from "jwt-decode";
 import Cookies from 'js-cookie';
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
+
 function Shop() {
 
     const [productInfo, setProductInfo] = useState({
@@ -64,7 +66,7 @@ function Shop() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("https://nike-clone-backend.vercel.app/api/user/addToBag", addBagItem);
+            const response = await axios.post(`${baseURL}/api/user/addToBag`, addBagItem);
     
             if (response.status === 201) {
                 console.log("Item added to bag.");
@@ -83,7 +85,7 @@ function Shop() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("https://nike-clone-backend.vercel.app/api/user/addToFavourite", addBagItem);
+            const response = await axios.post(`${baseURL}/api/user/addToFavourite`, addBagItem);
     
             if (response.status === 201) {
                 console.log("Item added to favourites.");

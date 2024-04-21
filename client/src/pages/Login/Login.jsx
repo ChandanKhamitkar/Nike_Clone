@@ -7,6 +7,8 @@ import Cookies from 'js-cookie';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
+
 function Login(){
 
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ function Login(){
             pending: "Matching Password",
           });
 
-          await axios.post("https://nike-clone-backend.vercel.app/api/user/loginUser", {
+          await axios.post(`${baseURL}/api/user/loginUser`, {
             email : email,
             password : password
           })

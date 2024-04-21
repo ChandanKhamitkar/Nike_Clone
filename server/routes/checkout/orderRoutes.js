@@ -3,7 +3,7 @@ import Users from "../../models/userModel.js";
 const router = express.Router();
 
  router.post("/order", async (req, res) => {
-    const userId = req.body.userId;
+    const userId = req.user;
 
     const user = await Users.findByIdAndUpdate(userId, {$set : {bag : []}}, {new :  true})
     .then(updatedUser => {
