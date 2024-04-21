@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import axios from 'axios';
+
 import LandingPage from './pages/LandingPage.jsx';
 import SignInJoinUs from './pages/Login/SignInJoinUs.jsx'
 import SignUp from './pages/SignUp/SignUp.jsx';
@@ -13,6 +15,10 @@ import OrderPlaced from './pages/OrderPlace/OrderPlaced.jsx';
 
 
 function App(){
+
+  const baseURL = process.env.REACT_APP_BASE_API_URL;
+  axios.defaults.baseURL = baseURL;
+
   return (
     <>
     <BrowserRouter>

@@ -33,9 +33,6 @@ router.post("/loginUser", async(req,res) => {
             };
             const token = jwt.sign(tokenPayload, process.env.TOKEN_SECRET, {expiresIn : "15m"});
             res.cookie("auth_token", token, { httpOnly: true });
-            console.log(`Genereated token is = ${token}`);
-            console.log("token type : ", typeof(token));
-
 
             res.status(200).json({
                 message : "Login Successfull.",

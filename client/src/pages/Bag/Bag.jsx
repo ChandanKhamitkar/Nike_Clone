@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import Loader from "./Loader.jsx";
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
 
 function Bag() {
 
@@ -24,7 +25,7 @@ function Bag() {
     const fetchData = async () =>{
       try {
         const token = Cookies.get('auth_token');
-        const response = await axios.get("https://nike-clone-backend.vercel.app/api/user/checkout", {
+        const response = await axios.get(`${baseURL}/api/user/checkout`, {
           headers : {
             "content-type" : "application/json",
             Authorization : `Bearer ${token}`,
@@ -51,7 +52,12 @@ function Bag() {
 
     const handleCheckOut = async () => {
       try {
-        await axios.post("https://nike-clone-backend.vercel.app/api/user/order", {userId});
+        await axios.post(`${baseURL}/api/user/order`, {userId}, {
+          headers : {
+            "content-type" : "application/json",
+            Authorization : `Bearer ${token}`,
+          },
+        });
         console.log("Order placed Successfully");
         navigate("/orderPlaced");
       } catch (error) {

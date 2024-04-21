@@ -8,7 +8,6 @@ const Authentication = async (req, res, next) => {
     
         if (!token) {
             return res.redirect("/login");
-            // return res.status(401).json({ message: "Authentication failed: Token missing" });
         }
         const data = jwt.verify(token, process.env.TOKEN_SECRET);
         req.user = data.userId;

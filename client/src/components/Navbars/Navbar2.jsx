@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
+
 function Navbar2() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,7 +39,7 @@ function Navbar2() {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "https://nike-clone-backend.vercel.app/api/user/getBagItemsSize",
+          `${baseURL}/api/user/getBagItemsSize`,
           { userId }
         );
         setBagSize(response.data.bagSize);

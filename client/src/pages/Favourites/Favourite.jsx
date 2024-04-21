@@ -5,9 +5,10 @@ import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { jwtDecode } from "jwt-decode";
 import FavouriteCard from "../Components/FavouriteCard";
 import Loader from "../Bag/Loader";
+
+const baseURL = process.env.REACT_APP_BASE_API_URL;
 
 function Favourite() {
   const [data, setData] = useState([]);
@@ -15,11 +16,14 @@ function Favourite() {
     const fetchData = async () => {
       try {
         const token = Cookies.get("auth_token");
-        const decodedToken = jwtDecode(token);
-        const userId = decodedToken.userId;
-        const response = await axios.post(
-          "https://nike-clone-backend.vercel.app/api/user/favourite",
-          { userId }
+        const response = await axios.get(
+          `${baseURL}/api/user/favourite`,
+          {
+            headers : {
+              'content-type' : 'application/json',
+              Authorization : `Bearer ${token}`
+            }
+          }
         );
         setData(response.data.favourite);
         console.log("Successfully fetched favourites data.");

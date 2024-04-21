@@ -7,6 +7,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
+
 function SignUp() {
 
     const navigate = useNavigate();
@@ -75,7 +77,7 @@ function SignUp() {
       else{
         console.log(`Entered correct otp is = ${enteredOTP} and actual OTP is --- ${actualOTP}`);
 
-        await axios.post(`https://nike-clone-backend.vercel.app/api/user/signUp`, {
+        await axios.post(`${baseURL}/api/user/signUp`, {
           email : email,
           firstname: formData.firstname,
           lastname: formData.lastname,

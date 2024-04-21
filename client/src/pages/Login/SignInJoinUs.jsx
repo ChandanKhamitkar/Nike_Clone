@@ -6,6 +6,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const baseURL = process.env.REACT_APP_BASE_API_URL;
+
 function SignInJoinUs() {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
@@ -38,7 +40,7 @@ function SignInJoinUs() {
       });
 
       await axios
-        .post("https://nike-clone-backend.vercel.app/api/user/checkUser", {
+        .post(`${baseURL}/api/user/checkUser`, {
           email: email,
           country: selectedcountry,
         })
