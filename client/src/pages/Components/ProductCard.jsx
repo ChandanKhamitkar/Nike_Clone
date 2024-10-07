@@ -20,7 +20,7 @@ function ProductsCard(props){
     };
 
     return (
-        <div key={props.id} onClick={handleClick} className="max-w-[374px] h-auto space-y-1 relative md:mb-3 md:max-w-[250px] mobile:max-w-[190px]">
+        <div key={props.id} onClick={handleClick} className="max-w-[374px] h-auto space-y-1 relative md:mb-3 md:max-w-[250px] mobile:max-w-[190px] cursor-pointer">
             <img src={props.imgLink} alt="product" className="w-full mb-2 "/>
                 <HighlyRated visibility={props.highlyRated}/>
             <div>
